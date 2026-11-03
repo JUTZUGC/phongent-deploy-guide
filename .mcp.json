@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "phongent-guide": {
+      "command": "node",
+      "args": [
+        "mcp-server.mjs"
+      ]
+    }
+  }
+}

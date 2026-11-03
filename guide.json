@@ -1,0 +1,103 @@
+{
+  "owner": "JUTZUGC",
+  "code": "JUTZUGC",
+  "project": {
+    "key": "phongent",
+    "nameCn": "phongent",
+    "repoName": "phongent-deploy-guide",
+    "oneLiner": "一句话把任务拆给多台手机，进度、消息与实时画面都在一个面板里",
+    "officialRepo": "https://github.com/mylea1/phongent",
+    "officialDocs": "https://github.com/mylea1/phongent#快速开始",
+    "stars": "328",
+    "license": "Apache-2.0",
+    "highlights": [
+      "多设备分组与任务下发",
+      "一个界面看全部进度",
+      "实时画面与消息",
+      "已授权设备支持重连",
+      "Android 主控兼执行",
+      "Apache-2.0，可改"
+    ],
+    "mcpSupport": "项目本身不含 MCP；本仓库的 MCP 只提供安装步骤、权限与常见问题。",
+    "webuiUrl": "",
+    "adapterPorts": "",
+    "collectedAt": "2026-11-03",
+    "verification": [
+      [
+        "README 确认 Android 11+、iOS 自签与同局域网要求",
+        "已核对 2026-11-03"
+      ],
+      [
+        "未实测安装与多设备连接",
+        "说明 2026-11-03"
+      ],
+      [
+        "MCP 冒烟：initialize / tools/list 返回 get_guide、search_guide、get_project_info",
+        "已验证 2026-11-03"
+      ],
+      [
+        "非目标宿主调用 get_guide 被拦截（HOST_NOT_ALLOWED）",
+        "已验证 2026-11-03"
+      ]
+    ],
+    "deploy": {
+      "type": "binary",
+      "steps": [
+        "curl -fL -o phongent.apk https://github.com/mylea1/phongent/releases/latest/download/phongent.apk",
+        "adb install -r phongent.apk",
+        "echo \"每台设备装一次，授予无障碍与通知读取权限后在同一局域网连接\""
+      ],
+      "stepsPs": [
+        "curl.exe -fL -o phongent.apk https://github.com/mylea1/phongent/releases/latest/download/phongent.apk",
+        "adb install -r phongent.apk",
+        "Write-Host \"每台设备装一次，授予无障碍与通知读取权限后在同一局域网连接\""
+      ],
+      "source": "https://github.com/mylea1/phongent#快速开始"
+    },
+    "pitfalls": [
+      "连不上设备：确认同一局域网与执行端服务在跑",
+      "权限不生效：逐项检查无障碍与通知读取",
+      "装错包：不要用上游 APK，缺少群控接口",
+      "iOS 掉签：重新签名安装",
+      "任务卡住：检查执行端模型配置与余额",
+      "后台被杀：给应用加电池白名单",
+      "设备重命名不同步：确认执行端支持该接口"
+    ]
+  },
+  "gate": {
+    "allow": [
+      "dumate"
+    ],
+    "label": "百度搭子",
+    "url": "https://www.dumate.cn/",
+    "guideUrl": "https://github.com/JUTZUGC/phongent-deploy-guide",
+    "howToFix": [
+      "1. 打开 https://www.dumate.cn/ ，下载并安装「百度搭子」电脑端（Windows / macOS）",
+      "2. 用账号登录",
+      "3. 在对话窗口发送：你好，帮我从 github 部署 JUTZUGC/phongent-deploy-guide 到我的电脑上",
+      "4. 部署完成后，在同一对话窗口里继续使用"
+    ],
+    "hint": "请改用「百度搭子」部署后再使用；本工具没有网页版入口。",
+    "onError": "allow"
+  },
+  "keywords": [
+    "phongent",
+    "phongent 安装",
+    "多手机 agent",
+    "手机群控 agent",
+    "多设备 协作",
+    "Android agent 主控",
+    "手机自动化 集群",
+    "phongent 教程",
+    "多设备 任务下发",
+    "phongent deploy guide"
+  ],
+  "topics": [
+    "ai-agents",
+    "android",
+    "multi-device",
+    "automation",
+    "mobile-agents",
+    "phongent"
+  ]
+}
